@@ -1,0 +1,226 @@
+/* Google fonts */
+@import "https://fonts.googleapis.com/css?family=Exo:400,200|Ubuntu:300,400";
+
+/* Basic styles */
+body {
+  font-family: "Exo", sans-serif;
+  font-size: 16px;
+  background: linear-gradient(135deg, #0094FF, #0FF) fixed;
+}
+a {
+  text-decoration: none;
+  color: #0094FF;
+}
+#mal_control_strip a {
+  color: #0094FF !important;
+}
+a:hover {
+  text-decoration: underline;
+}
+strong, b {
+  font-weight: 400;
+}
+
+/* Main list block */
+#list_surround {
+  width: 840px;
+  margin: 100px auto 40px;
+  padding: 0 0 20px;
+  background: #FFF;
+  box-shadow: 10px 10px rgba(0,0,0,0.1);
+}
+
+/* List header - "Geo1088's Anime" */
+#list_surround::before {
+  display: block;
+  content: "Geo1088's Anime";
+  padding: 30px 30px 73px;
+  text-align: center;
+  font-size: 56px;
+  font-weight: 200;
+  text-shadow: 0 0 1px rgba(255,255,255,0.5), 0 0 60px #000;
+  background: #666;
+  color: #FFF;
+  margin: 0;
+  height: 76px;
+}
+
+/* The "Currently watching", "Completed", etc. links table */
+#list_surround table:first-of-type {
+  margin: -43px 0 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 43px;
+}
+/* The buttons themselves */
+.status_not_selected a, .status_selected a {
+  display: block;
+  padding: 10px;
+  transition: 200ms;
+  text-decoration: none !important;
+  height: 23px;
+}
+/* Animation */
+table:not(:hover) .status_selected a, .status_not_selected a:hover, .status_selected a:hover {
+  box-shadow: inset 0 -43px #FFF;
+}
+
+/* Category headers */
+.header_title {
+  font-family: "Exo";
+  font-weight: 200;
+  font-size: 48px;
+  text-align: center;
+  padding: 10px;
+  border: none;
+  border-bottom: none;
+}
+/* Add the lines, the colors are changed at the bottom */
+.header_title::before, .header_title::after { content: " — " }
+ 
+/* Table cell styling */
+.td1, .td2, .table_header {
+  border: none;
+  border-bottom: none;
+  border-left: none;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  padding: 10px;
+  transition: 200ms;
+}
+/* To even padding, the first and last are a bit different */
+.td1:first-of-type, .td2:first-of-type, .table_header:first-of-type {
+  padding-left: 20px;
+}
+.td1:last-of-type, .td2:last-of-type, .table_header:last-of-type {
+  width: 250px;
+}
+/* Stripe every second row */
+.td2 { background: #F7F7F7; }
+/* Darken the headers */
+.table_header { background: #E7E7E7; }
+/* Darken and animate rows on hover */
+table:not([class]):not(:first-of-type) tr:hover td { background: #E7E7E7; }
+
+/* Category totals */
+.category_totals {
+  display: block;
+  padding: 10px;
+  border: none;
+  text-align: center;
+  font-size: 13px;
+  background: #E7E7E7;
+}
+
+/* Grand total container - Works differently than the headers thanks to it not actually existing by default */
+#grand_totals {
+  padding: 10px 0;
+  border: none;
+  font-size: 13px;
+  text-align: center;
+  background: #E7E7E7;
+  position: relative;
+}
+/* This part is used to add the colored lines... */
+#grand_totals::before {
+  content: "— Grand Totals —";
+  display: block;
+  margin: -10px 0 10px;
+  padding: 10px;
+  font-size: 48px;
+  text-align: center;
+  font-weight: 200;
+  background: #FFF;
+  /* The actual color is applied in the bottom block to make my life easier later */
+}
+/* and this part puts "Grand Totals" above it in the same place, but in the normal black color. */
+#grand_totals::after {
+  content: "Grand Totals";
+  display: block;
+  position: absolute;
+  top: 0px;
+  font-size: 48px;
+  font-weight: 200;
+  text-align: center;
+  width: calc(100% - 20px);
+  padding: 10px;
+}
+
+/* Copyright footer */
+#copyright {
+  margin: 0;
+  margin-top: 17px !important;
+  padding: 10px;
+}
+
+/* Replace tag links with raw text */
+span[id*="tagLinks"] {
+  display: none !important;
+}
+span[id*="tagRow"] {
+    display: block !important;
+}
+span[id*="tagRowEdit"] {
+    display: none !important;
+}
+
+/* Top bar resets */
+#mal_control_strip {
+  background-color: #E7E7E7 !important;
+  background-image: none !important;
+  box-shadow: 0 10px rgba(0,0,0,0.1);
+}
+#mal_control_strip a {
+  text-decoration: none !important;
+}
+#mal_cs_pic, #mal_cs_listinfo, #mal_cs_links {
+  border-right: 0 !important;
+}
+#mal_control_strip tr td strong {
+  color: #000;
+}
+
+/* Edit and add buttons in the title field - only show on hover */
+td div[style="float: right;"] {
+  display: block !important;
+  background: transparent;
+  opacity: 0;
+  transition: 200ms;
+}
+tr:hover td div[style="float: right;"] { opacity: 1 }
+
+/* I'll just put this here, paddings are set rather than relying on br's */
+br { display: none }
+
+/* Different colors for different sections (warning: spaghetti readbility) */
+#list_surround table:first-of-type td:nth-child(1) a,
+.header_cw ~ table a,
+.header_cw div::before, .header_cw div::after
+{ color: #00D650 }
+
+#list_surround table:first-of-type td:nth-child(2) a,
+.header_completed ~ table a,
+.header_completed div::before, .header_completed div::after
+{ color: #DF00A4 }
+
+#list_surround table:first-of-type td:nth-child(3) a,
+.header_onhold ~ table a,
+.header_onhold div::before, .header_onhold div::after
+{ color: #FF9B00 }
+
+#list_surround table:first-of-type td:nth-child(4) a,
+.header_dropped ~ table a,
+.header_dropped div::before, .header_dropped div::after
+{ color: #FF0700 }
+
+#list_surround table:first-of-type td:nth-child(5) a,
+.header_ptw ~ table a,
+.header_ptw div::before, .header_ptw div::after
+{ color: #FF43A7 }
+
+#list_surround table:first-of-type td:nth-child(6) a,
+#grand_totals::before
+{ color: #0094FF }

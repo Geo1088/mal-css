@@ -1,0 +1,14 @@
+/* Base theme */
+@import "https://dl.dropbox.com/s/y8i3rkr87ub5ieo/Base.css"; /* Page layout and default colors */
+
+/* Background switcher 50/50 */
+/* @import "https://dl.dropbox.com/s/pxtlg2g21qxbs9s/Green.css"; */
+@import "http://true5050.com/JxfqR"; /* Other colors */
+/* Old was 2qq7i  */
+
+/* Utilities */
+@import "https://dl.dropbox.com/s/781usky86er351a/Animations.css"; /* Animations */
+@import "https://dl.dropbox.com/s/u914t0rooat86se/Text Replacement.css"; /* Text replacement */
+
+/* Seasonal */
+/*@import "https://dl.dropbox.com/s/xdtxplxculcqimk/Snow.css"; /* Animated snow background */

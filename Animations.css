@@ -1,0 +1,37 @@
+/* Header slideshow animation */
+@keyframes slideshow {
+  from { background-position: 0 0; }
+  23% { background-position: 0 0; }
+  25% { background-position: -840px 0; }
+  48% { background-position: -840px 0; }
+  50% { background-position: -1680px 0; }
+  73% { background-position: -1680px 0; }
+  75% { background-position: -2520px 0; }
+  98% { background-position: -2520px 0; }
+  99.99999% { background-position: -3360px 0; }
+  to  { background-position: 0 0; }
+}
+#list_surround::before {
+  background-image: url("https://dl.dropbox.com/s/0tfgmln4yqkqmgv/Header animation sheet.png");
+  background-size: cover;
+  animation: slideshow 20s infinite;
+}
+
+/* Intro animation */
+@keyframes intro {
+  from {
+    opacity: 0;
+    margin-top: 100vh;
+  }
+  16% {
+    opacity: 0;
+    margin-top: 100vh;
+  }
+  to {
+    opacity: 1;
+    margin-top: 100px;
+  }
+}
+#list_surround {
+  animation: intro 2s;
+}
